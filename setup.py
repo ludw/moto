@@ -19,7 +19,7 @@ install_requires = [
 ]
 
 extras_require = {
-    'server': ['flask'],
+    'server': ['flask', 'flask-cors'],
 }
 
 setup(

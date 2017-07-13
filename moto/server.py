@@ -10,6 +10,7 @@ from threading import Lock
 
 from flask import Flask
 from flask.testing import FlaskClient
+from flask_cors import CORS
 from werkzeug.routing import BaseConverter
 from werkzeug.serving import run_simple
 
@@ -119,6 +120,7 @@ def create_backend_app(service):
     backend_app = Flask(__name__)
     backend_app.debug = True
     backend_app.service = service
+    CORS(backend_app, expose_headers=['ETag'])
 
     # Reset view functions to reset the app
     backend_app.view_functions = {}
